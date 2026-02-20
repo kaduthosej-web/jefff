@@ -1,20 +1,18 @@
-import java.util.Scanner;
-
 public class Fibonacci {
 
-    public static int fibonacci(int n) {
-        if (n == 0)
-            return 0;
-        else if (n == 1)
-            return 1;
-        else
-            return fibonacci(n - 1) + fibonacci(n - 2);
-    }
-
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter n: ");
-        int n = sc.nextInt();
-        System.out.println("Fibonacci number: " + fibonacci(n));
+
+        int n = 10;   // Number of terms
+        int first = 0, second = 1;
+
+        System.out.println("Fibonacci Series:");
+
+        for (int i = 1; i <= n; i++) {
+            System.out.print(first + " ");
+
+            int next = first + second;
+            first = second;
+            second = next;
+        }
     }
 }

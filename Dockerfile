@@ -1,2 +1,9 @@
-FROM nginx:alpine
-COPY index.html /usr/share/nginx/html/index.html
+FROM eclipse-temurin:21-jdk-alpine
+
+WORKDIR /app
+
+COPY Fibonacci.java .
+
+RUN javac Fibonacci.java
+
+CMD ["java", "Fibonacci"]
